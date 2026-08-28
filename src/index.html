@@ -1,1 +1,55 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lanka Smart Todo</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Todo</h1>
+            <p>Manage your daily tasks efficiently</p>
+        </header>
+
+        <main>
+            <div class="todo-input">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter a new task..."
+                >
+                <button id="addTaskBtn">Add Task</button>
+            </div>
+
+            <div class="task-info">
+                <span id="taskCount">0 tasks remaining</span>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter-btn" data-filter="active">
+                    Active
+                </button>
+
+                <button class="filter-btn" data-filter="completed">
+                    Completed
+                </button>
+            </div>
+
+            <ul id="taskList"></ul>
+        </main>
+
+        <footer>
+            <p>Sri Lanka Smart Todo | DevOps Team Assignment</p>
+        </footer>
+    </div>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
