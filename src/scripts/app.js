@@ -24,7 +24,8 @@ function addTask() {
     const task = {
         id: Date.now(),
         text: taskText,
-        completed: false
+        completed: false,
+        createdAt: new Date().toLocaleString()
     };
 
     tasks.push(task);
@@ -85,7 +86,10 @@ function renderTasks() {
         li.innerHTML = `
             <div class="task-left">
                 <input type="checkbox" ${task.completed ? "checked" : ""}>
-                <span>${task.text}</span>
+                <div>
+                    <span>${task.text}</span>
+                    <small>Created: ${task.createdAt || "Previously added"}</small>
+                </div>
             </div>
             <button class="delete-btn">Delete</button>
         `;
