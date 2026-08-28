@@ -3,9 +3,16 @@ const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const taskCount = document.getElementById("taskCount");
 
-let tasks = [];
+// Load saved tasks from browser storage
+let tasks = JSON.parse(localStorage.getItem("smartTodoTasks")) || [];
 let currentFilter = "all";
 
+// Save tasks to localStorage
+function saveTasks() {
+    localStorage.setItem("smartTodoTasks", JSON.stringify(tasks));
+}
+
+// Add a new task
 function addTask() {
     const taskText = taskInput.value.trim();
 
@@ -21,11 +28,14 @@ function addTask() {
     };
 
     tasks.push(task);
+    saveTasks();
+
     taskInput.value = "";
 
     renderTasks();
 }
 
+// Complete/uncomplete a task
 function toggleTask(id) {
     tasks = tasks.map(task =>
         task.id === id
@@ -33,14 +43,19 @@ function toggleTask(id) {
             : task
     );
 
+    saveTasks();
     renderTasks();
 }
 
+// Delete a task
 function deleteTask(id) {
     tasks = tasks.filter(task => task.id !== id);
+
+    saveTasks();
     renderTasks();
 }
 
+// Update task counter
 function updateTaskCount() {
     const remaining = tasks.filter(task => !task.completed).length;
 
@@ -48,6 +63,7 @@ function updateTaskCount() {
         `${remaining} task${remaining !== 1 ? "s" : ""} remaining`;
 }
 
+// Display tasks
 function renderTasks() {
     taskList.innerHTML = "";
 
@@ -77,8 +93,13 @@ function renderTasks() {
         const checkbox = li.querySelector("input");
         const deleteButton = li.querySelector(".delete-btn");
 
-        checkbox.addEventListener("change", () => toggleTask(task.id));
-        deleteButton.addEventListener("click", () => deleteTask(task.id));
+        checkbox.addEventListener("change", () => {
+            toggleTask(task.id);
+        });
+
+        deleteButton.addEventListener("click", () => {
+            deleteTask(task.id);
+        });
 
         taskList.appendChild(li);
     });
@@ -86,14 +107,17 @@ function renderTasks() {
     updateTaskCount();
 }
 
+// Add task using button
 addTaskBtn.addEventListener("click", addTask);
 
+// Add task using Enter key
 taskInput.addEventListener("keypress", event => {
     if (event.key === "Enter") {
         addTask();
     }
 });
 
+// Filter tasks
 document.querySelectorAll(".filter-btn").forEach(button => {
     button.addEventListener("click", () => {
         currentFilter = button.dataset.filter;
@@ -103,8 +127,10 @@ document.querySelectorAll(".filter-btn").forEach(button => {
         });
 
         button.classList.add("active");
+
         renderTasks();
     });
 });
 
+// Display saved tasks when application starts
 renderTasks();
