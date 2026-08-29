@@ -54,7 +54,7 @@ The repository utilizes a structured branch model for clean collaboration:
 
 ## 9. Deployment
 The production application is continuously deployed to GitHub Pages:
-👉 **Live URL:** [https://easmaleesha-bot.github.io/sri-lanka-smart-todo-devops](https://easmaleesha-bot.github.io/sri-lanka-smart-todo-devops) *(Note: Replace with the final repository URL after setting up the production environment)*
+👉 **Live URL:** [https://easmaleesha-bot.github.io/sri-lanka-smart-todo-devops](https://easmaleesha-bot.github.io/sri-lanka-smart-todo-devops)
 
 ## 10. Team Members
 
