@@ -1,0 +1,19 @@
+{
+  "name": "sri-lanka-smart-todo-devops",
+  "version": "1.0.0",
+  "description": "Sri Lanka Smart Todo is a simple task management web application built as a DevOps Team Assignment.",
+  "main": "src/index.html",
+  "scripts": {
+    "lint": "node scripts/lint.js",
+    "test": "node scripts/test.js",
+    "build": "node scripts/build.js"
+  },
+  "keywords": [
+    "devops",
+    "todo",
+    "github-actions",
+    "github-pages"
+  ],
+  "author": "University DevOps Team Assignment Group",
+  "license": "ISC"
+}

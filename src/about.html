@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sri Lanka Smart Todo - A simple, clean, and professional personal task manager with offline localStorage persistence, dashboard metrics, and a beautiful responsive UI.">
+    <title>Sri Lanka Smart Todo - About</title>
+    <!-- Google Fonts Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <span class="nav-logo-icon">✓</span>
+                <span>Smart Todo</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="todo.html" class="nav-link">Todo</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        
+        <section id="aboutSection" class="site-section">
+            <div class="about-container">
+                <header class="about-header" style="margin-bottom: 2.5rem;">
+                    <h2>About Smart Todo</h2>
+                    <p style="margin-top: 0.5rem; font-size: 1.05rem;">Sri Lanka Smart Todo is a simple task management web application built as a DevOps Team Assignment.</p>
+                </header>
+
+                <div class="about-subgrid">
+                    <!-- Column 1: About the Project -->
+                    <div class="card">
+                        <h3 class="about-section-title">About the Project</h3>
+                        <p style="font-size: 0.92rem; line-height: 1.5; margin-bottom: 1rem;">This application is designed to help users streamline their daily task management. It delivers an offline-first workspace to manage daily activities efficiently with zero third-party packages or server latency.</p>
+                        
+                        <ul class="project-bullets">
+                            <li><span class="bullet-check">✓</span> Daily task management</li>
+                            <li><span class="bullet-check">✓</span> Add, complete and delete tasks</li>
+                            <li><span class="bullet-check">✓</span> Filter tasks (All / Active / Completed)</li>
+                            <li><span class="bullet-check">✓</span> Persistent data using browser localStorage</li>
+                            <li><span class="bullet-check">✓</span> Real-time task metrics and dashboard statistics</li>
+                            <li><span class="bullet-check">✓</span> Clean responsive design across devices</li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 2: Tech Stack -->
+                    <div class="card">
+                        <h3 class="about-section-title">Technology Stack</h3>
+                        <div class="tech-list">
+                            <div class="tech-item">
+                                <div class="tech-icon-wrapper" style="color: #e34c26;">🧡</div>
+                                <div class="tech-info">
+                                    <h4>HTML5 & CSS3</h4>
+                                    <p>Semantic layouts and responsive design styling</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon-wrapper" style="color: #f7df1e;">💛</div>
+                                <div class="tech-info">
+                                    <h4>JavaScript (ES6)</h4>
+                                    <p>Client-side application logic and interactivity</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon-wrapper" style="color: #3b82f6;">💾</div>
+                                <div class="tech-info">
+                                    <h4>Browser localStorage</h4>
+                                    <p>Offline persistent task storage</p>
+                                </div>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon-wrapper" style="color: #0f172a;">⚙️</div>
+                                <div class="tech-info">
+                                    <h4>Git & GitHub</h4>
+                                    <p>Version control and collaboration platform</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: DevOps & Deployment -->
+                <div class="card" style="margin-top: 1.5rem;">
+                    <h3 class="about-section-title">DevOps & Deployment</h3>
+                    <p style="font-size: 0.92rem; margin-bottom: 1rem;">This assignment demonstrates an automated continuous integration and continuous deployment (CI/CD) workflow. The project manages branches strictly: <strong>develop</strong> is the main integration and testing branch, while <strong>main</strong> is the protected production branch automatically deployed to the live server.</p>
+                    
+                    <div class="flowchart-container">
+                        <div class="flow-node">
+                            <span class="node-icon">💻</span>
+                            <span>GitHub Repository</span>
+                            <p style="color: var(--text-muted);">Source Code</p>
+                        </div>
+                        <div class="flow-arrow">➜</div>
+                        <div class="flow-node">
+                            <span class="node-icon">⚙️</span>
+                            <span>GitHub Actions CI</span>
+                            <p style="color: var(--text-muted);">Workflows Trigger</p>
+                        </div>
+                        <div class="flow-arrow">➜</div>
+                        <div class="flow-node">
+                            <span class="node-icon">🔍</span>
+                            <span>Build & Quality</span>
+                            <p style="color: var(--text-muted);">Lint & Test Suite</p>
+                        </div>
+                        <div class="flow-arrow">➜</div>
+                        <div class="flow-node">
+                            <span class="node-icon">🚀</span>
+                            <span>Production Deploy</span>
+                            <p style="color: var(--text-muted);">GitHub Pages Host</p>
+                        </div>
+                        <div class="flow-arrow">➜</div>
+                        <div class="flow-node">
+                            <span class="node-icon">🌐</span>
+                            <span>Live Application</span>
+                            <p style="color: var(--text-muted);">Access URL</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Team Section -->
+                <div class="card" style="margin-top: 1.5rem; border-radius: var(--border-radius-lg);">
+                    <h3 class="about-section-title">Assignment & Team Information</h3>
+                    <p style="font-size: 0.92rem; margin-bottom: 1.25rem;">This project is developed as a group practical exercise for the DevOps Team Assignment. The contributions and details of the team members are organized as follows:</p>
+                    
+                    <div class="stats-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="card" style="padding: 1.25rem; background-color: var(--bg-main); border: 1px solid var(--border);">
+                            <h4 style="font-size: 0.95rem; margin-bottom: 8px; color: var(--primary);">Student 1</h4>
+                            <p style="font-size: 0.85rem; line-height: 1.5;">
+                                <strong>Name:</strong> E.A.S. Malisha<br>
+                                <strong>ID:</strong> ITBIN-2313-0060<br>
+                                <strong>Role:</strong> DevOps and CI/CD
+                            </p>
+                        </div>
+                        <div class="card" style="padding: 1.25rem; background-color: var(--bg-main); border: 1px solid var(--border);">
+                            <h4 style="font-size: 0.95rem; margin-bottom: 8px; color: var(--primary);">Student 2</h4>
+                            <p style="font-size: 0.85rem; line-height: 1.5;">
+                                <strong>Name:</strong> I.M.D.A. Ilankoon<br>
+                                <strong>ID:</strong> ITBIN-2313-0041<br>
+                                <strong>Role:</strong> Application Development
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <p>Sri Lanka Smart Todo | DevOps Team Assignment</p>
+    </footer>
+
+    <script>
+        // Simple Mobile Navigation menu toggle
+        const navToggle = document.getElementById("navToggle");
+        const navLinks = document.getElementById("navLinks");
+        if (navToggle) {
+            navToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        }
+    </script>
+</body>
+</html>
