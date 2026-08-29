@@ -56,12 +56,13 @@ function deleteTask(id) {
     renderTasks();
 }
 
-// Update task counter
+// Update task counter to match: "X tasks total • Y remaining"
 function updateTaskCount() {
+    const total = tasks.length;
     const remaining = tasks.filter(task => !task.completed).length;
 
     taskCount.textContent =
-        `${remaining} task${remaining !== 1 ? "s" : ""} remaining`;
+        `${total} task${total !== 1 ? "s" : ""} total • ${remaining} remaining`;
 }
 
 // Display tasks
@@ -112,14 +113,18 @@ function renderTasks() {
 }
 
 // Add task using button
-addTaskBtn.addEventListener("click", addTask);
+if (addTaskBtn) {
+    addTaskBtn.addEventListener("click", addTask);
+}
 
 // Add task using Enter key
-taskInput.addEventListener("keypress", event => {
-    if (event.key === "Enter") {
-        addTask();
-    }
-});
+if (taskInput) {
+    taskInput.addEventListener("keypress", event => {
+        if (event.key === "Enter") {
+            addTask();
+        }
+    });
+}
 
 // Filter tasks
 document.querySelectorAll(".filter-btn").forEach(button => {
